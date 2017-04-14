@@ -16,4 +16,4 @@ sync:
 
 update:
 	cp Dockerfile ${R_VERSION}/Dockerfile
-	sed -i 's/tidyverse:latest/verse:${R_VERSION}/' ${R_VERSION}/Dockerfile
+	sed -i 's/verse:latest/verse:${R_VERSION}/' ${R_VERSION}/Dockerfile

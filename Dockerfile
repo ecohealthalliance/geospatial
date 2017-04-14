@@ -1,4 +1,4 @@
-FROM rocker/tidyverse:latest
+FROM rocker/verse:latest
 MAINTAINER "Noam Ross" ross@ecohealthalliance.org
 
 ENV GDAL_VERSION 2.1.3

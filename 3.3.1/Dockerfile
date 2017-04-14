@@ -1,4 +1,4 @@
-FROM rocker/tidyverse:3.3.1
+FROM rocker/verse:3.3.1
 MAINTAINER "Carl Boettiger" cboettig@ropensci.org
 
 ENV GDAL_VERSION 2.1.3
@@ -67,7 +67,7 @@ RUN apt-get update \
   ## Cleanup gdal & geos installation
   && rm -rf gdal-* geos-* \
   && . /etc/environment \
-## Install R packages labeled "core" in Spatial taskview 
+## Install R packages labeled "core" in Spatial taskview
   && install2.r --error \
     --repos 'https://cloud.r-project.org/' \
     --repos 'http://www.bioconductor.org/packages/release/bioc' \
@@ -95,4 +95,4 @@ RUN apt-get update \
     splancs \
     geoR \
     ## from bioconductor
-    rhdf5 
+    rhdf5

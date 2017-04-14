@@ -69,7 +69,7 @@ RUN apt-get update \
   && . /etc/environment \
 ## Install GRASS and plugins \
 && apt-get install -y --no-install-recommends \
-   grass grass-dev grass-doc grass-dev-doc libgdal-grass \
+   grass grass-dev grass-doc grass-dev-doc libgdal1-1.10.1-grass \
 ## Install R packages labeled "core" in Spatial taskview
   && install2.r --error \
     --repos 'https://cloud.r-project.org/' \

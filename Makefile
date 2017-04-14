@@ -1,7 +1,7 @@
-latest: 
-	docker build -t rocker/geospatial .
+latest:
+	docker build -t ecohealthalliance/geoverse .
 
-sync: 
+sync:
 	make 3.3.3/Dockerfile 3.3.2/Dockerfile 3.3.1/Dockerfile
 
 
@@ -16,5 +16,4 @@ sync:
 
 update:
 	cp Dockerfile ${R_VERSION}/Dockerfile
-	sed -i 's/tidyverse:latest/tidyverse:${R_VERSION}/' ${R_VERSION}/Dockerfile
-
+	sed -i 's/tidyverse:latest/verse:${R_VERSION}/' ${R_VERSION}/Dockerfile

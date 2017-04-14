@@ -1,5 +1,5 @@
-FROM rocker/verse:3.3.1
-MAINTAINER "Carl Boettiger" cboettig@ropensci.org
+FROM rocker/verse:latest
+MAINTAINER "Noam Ross" ross@ecohealthalliance.org
 
 ENV GDAL_VERSION 2.1.3
 ENV GEOS_VERSION 3.5.1
@@ -67,6 +67,9 @@ RUN apt-get update \
   ## Cleanup gdal & geos installation
   && rm -rf gdal-* geos-* \
   && . /etc/environment \
+## Install GRASS and plugins \
+&& apt-get install -y --no-install-recommends \
+   grass grass-dev grass-doc grass-dev-doc libgdal-grass \
 ## Install R packages labeled "core" in Spatial taskview
   && install2.r --error \
     --repos 'https://cloud.r-project.org/' \

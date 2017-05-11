@@ -1,4 +1,4 @@
-FROM rocker/geospatial:latest
+FROM rocker/geospatial:3.4.0
 MAINTAINER "Noam Ross" ross@ecohealthalliance.org
 
 ## Install GRASS and plugins \

@@ -1,11 +1,13 @@
 FROM rocker/geospatial:devel
 MAINTAINER "Noam Ross" ross@ecohealthalliance.org
 
-## Install GRASS and plugins \
+## Install GRASS and plugins
 
 RUN apt-get update \
-&&    export DEBIAN_FRONTEND=noninteractive \  #needed to not prompt for mysql DB password
-&&    apt-get install -y --no-install-recommends --no-upgrade \  #no-upgrade skips things already installed
+## needed to not prompt for mysql DB password
+&&    export DEBIAN_FRONTEND=noninteractive \
+## no-upgrade skips things already installed
+&&    apt-get install -y --no-install-recommends --no-upgrade \
       cmake libboost-all-dev flex bison debhelper dpatch autoconf2.13 \
       autotools-dev python-dev g++ gcc gettext graphviz libcairo2-dev libfftw3-dev \
       libfreetype6-dev libgdal1h libgdal1-dev libglu1-mesa-dev libglw1-mesa-dev \
@@ -39,6 +41,7 @@ RUN apt-get update \
          --with-mysql-libs=/usr/lib/mysql \
 && make -j2 \
 && make install \
+&& cd .. \
 && rm -r grass-7.2.0 \
 && rm grass-7.2.0.tar.gz \
 

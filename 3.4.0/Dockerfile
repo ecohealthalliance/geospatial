@@ -41,6 +41,7 @@ RUN apt-get update \
          --with-mysql-libs=/usr/lib/mysql \
 && make -j2 \
 && make install \
+&& cd .. \
 && rm -r grass-7.2.0 \
 && rm grass-7.2.0.tar.gz \
 

@@ -49,4 +49,4 @@ RUN apt-get update \
 ## Install grass7 R package
   && install2.r --error \
     --repos 'https://cloud.r-project.org/' \
-    rgrass77
+    rgrass7

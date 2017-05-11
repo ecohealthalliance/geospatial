@@ -44,6 +44,7 @@ RUN apt-get update \
 && cd .. \
 && rm -r grass-7.2.0 \
 && rm grass-7.2.0.tar.gz \
+&& apt-get clean \
 
 ## Install grass7 R package
   && install2.r --error \
